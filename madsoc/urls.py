@@ -19,6 +19,10 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='site.html')),
+    url(r'^spoergeskema/', TemplateView.as_view(template_name='skema.html'), name='skema'),
+    url(r'^deltagelse-i-interview/', TemplateView.as_view(template_name='interview.html'), name='interview'),
+    url(r'^om-os/', TemplateView.as_view(template_name='omos.html'), name='omos'),
+    url(r'^kontakt/', TemplateView.as_view(template_name='kontakt.html'), name='kontakt'),
     #url(r'^blog/$', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -3,17 +3,75 @@
     <title>
         MadSociologi
     </title>
+    {% load staticfiles %}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'freestyle.css' %}">
 </head>
 <body>
-{% block content %}
-    <h1>
-        Velkommen til madcosiologi.dk
-    </h1>
-    <p>
-        Klik her for at besvare vores spørgeskema
-    </p>
 
-{% endblock %}
+<div id="frame">
+    <div id="menu_container">
+        <div class="menu_item">
+            <a href="{% url 'skema' %}">
+                 spørgeskema
+            </a>
+        </div>
+        <div class="menu_sep">
+            |
+        </div>
+        <div class="menu_item">
+            <a href="{% url 'interview' %}">
+                deltagelse i interview?
+            </a>
+        </div>
+        <div class="menu_sep">
+            |
+        </div>
+        <div class="menu_item">
+            <a href="{% url 'omos' %}">
+                om os
+            </a>
+        </div>
+        <div class="menu_sep">
+            |
+        </div>
+        <div class="menu_item">
+            <a href="{% url 'kontakt' %}">
+                kontakt
+            </a>
+        </div>
+        <span class="stretch"></span>
+    </div>
+
+    <div id="content">
+        <img id="splash" src="{% static 'food.jpg' %}" />
+
+        {% block content %}
+        <h2>
+            Spørgeskema
+        </h2>
+        <p>
+            Kære medarbejder. Vi håber du vil bruge cirka 2 minutter på at udfylde vores spørgeskema. Klik på linket i det nedenstående og udfyld derefter spørgeskemaet.
+        </p>
+        <p>
+            Spørgeskemaet omhandler frokostmåltidet på Nordjyske Medier. Spørgeskemaet handler om, hvad du spiser til frokost, hvor du spiser din frokost og hvem du spiser den med.
+        </p>
+
+        <p id="skema">
+            <a href="https://www.survey-xact.dk/LinkCollector?key=ZPY55V7MC59P">
+                Klik her for at tilgå spørgeskemaet
+            </a>
+        </p>
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        <img id="logo" src="{% static 'ku_logo.png' %}" />
+    </div>
+</div>
+
 </body>
 
 </html>
