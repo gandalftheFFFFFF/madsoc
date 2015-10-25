@@ -11,6 +11,12 @@ p {
     line-height: 150%;
 }
 
+@media only screen and (max-device-width: 480px) {
+    p {
+        font-size: 120%;
+    }
+}
+
 a {
     color: #800000;
     text-decoration: none;
@@ -113,9 +119,13 @@ div.menu_item {
 
         display: block;
 
-        text-align: center;
+        text-align: left;
 
         color: #800000;
+    }
+
+    div.menu_item::before {
+        content: '> ';
     }
 }
 
@@ -171,7 +181,7 @@ div.menu_sep {
         margin-right: 0;
         margin-bottom: 20px;
 
-        width: 97%;
+        width: 100%;
         height: auto;
 
         border: 1px solid black;
